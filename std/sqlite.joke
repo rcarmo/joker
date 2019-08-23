@@ -1,0 +1,16 @@
+(ns
+  ^{:go-imports []
+    :doc "Provides a simple interface to SQLite"}
+  os)
+  
+(defn ^Conn open
+  "Opens the database connection"
+  {:added "1.0"
+  :go "! _res, err := sqlite3.Open(name); PanicOnErr(err)"}
+  [^String name])
+
+(defn close
+  "Closes the database, rendering it unusable for I/O."
+  {:added "1.0"
+  :go "! err := conn.Close(); PanicOnErr(err); _res := NIL"}
+  [^Conn connf])
